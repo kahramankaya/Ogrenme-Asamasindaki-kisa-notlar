@@ -1,0 +1,56 @@
+
+# karar ve kontrol:
+# true ve false uygulamaları:    
+print(2==5) # false çıkar. bu iki eşitin anlamı 2 5 e eşit mi anlamı taşır. olmadığı için false dedi
+print(2==2) # true .. bu çıkar. çünkü 2 2 ye eşittir.
+tv=576
+print(tv==576) # true .. bu çıkar.
+print(tv==5) # false .. bu  çıkar.
+
+
+#if
+ilhanın_yaşı=input("yaş1")
+hasanın_yaşı=input("yaş2")
+if ilhanın_yaşı>hasanın_yaşı:
+    print("ilhan hasanı dövebilir")
+
+
+
+a=5
+b=9
+if a>b:
+    print("kaho")
+else:
+    print("ilho")    # ilho .. bu çıkar.
+    
+    
+    
+k=5
+l=5
+if k==l:
+    print("kaho")
+      
+else:
+    print("ilho")   #kaho... bu çıkar.
+    
+       
+    
+
+#iki koşul için önce if ve elif kullanıyoruz. diğer kalna kaç tane koşıl var ise hepsi else bağlı olmuş oluyor.
+sınır=15000
+arabahız1=12000
+arabahız2=13000
+arabahız3=17000
+
+if arabahız1>sınır:
+    print("çok süratli ilerliyorsunuz")
+elif arabahız2<sınır:
+    print("aferin adam olacaksınız")
+else:
+    print("en güzel sürattesiniz")    
+    
+ 
+    
+ 
+    
+ 
