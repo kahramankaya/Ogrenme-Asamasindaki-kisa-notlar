@@ -1,0 +1,32 @@
+
+
+#break and continiou:
+# break o zamana kadar istediklerini yazar. o dediğinden yukarısını yazmaz. bu yuzden sort() kullandık bıde.    
+#continiou ise sadece o degerı yazmaz yanı o degerı atlayarak yazar.
+maaslar=[1500,7800,1000,2000,6000,9000]
+maaslar.sort()    
+for m in maaslar:
+    if m==7800:
+        print("maaslar kesildi")
+        break
+    print(m) # burda her deger ıcın yanı m ıcın 7800 esıt olup olmadıgına bakar . esıt olmayınca dırek o degeı yazması ıcın prıntı bu fonksıyona baglı olmadan yazmadık.  zaten anlamıssınızdır.
+    
+    
+for m in maaslar:
+    if m==7800:
+        continue # sadece 7800 degerını atlayarak butun degerlerıı yazdırmaya yarar.
+    print(m)
+
+
+
+
+
+k=[100,200,800,756,126,546,59,109,9]
+k.sort()
+def kjh(x):
+    print(x*120/100)
+for m in k:
+    if m==200:
+        break
+    kjh(m)
+
