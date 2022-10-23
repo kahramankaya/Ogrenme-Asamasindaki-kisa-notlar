@@ -1,0 +1,127 @@
+
+
+
+
+#  burda başa def yazmak kendi fonksiyonunu oluşturmanı sağlıyor.yandaki de mesela aşağıda işlemleri_yap söz grubu da senin fonksiyonunun ismi oluyor.parantez içideki senin fonksiyonunun değişkeni oluyor.artık sen sadece fonksiyonun yazıp değişkene bir değer vermen dediğin işlemi yerine getirir.
+def işlemleri_yap(x): 
+    print(x**4) # burda demişim ki fonksiyona yazdığını bu işlemleri uygula.
+işlemleri_yap(3) # 81 .. bu çıkar.
+
+#ornek:
+def işlemleri_yap(x): 
+    print("işleminizin_sonucu= " +str(x**4) + " kadardır") # hata çıkmaması için sayının başına str yazdık. çünkü str ve int toplanamaz.
+işlemleri_yap(3) 
+
+
+def işlemleri_yap(x): 
+    print("işleminizin_sonucu= "
+          +str(x**4) + 
+          " kadardır")
+işlemleri_yap(3) # işleminizin_sonucu= 81 kadardır .. bu çıkar.
+
+#başka bir örnek: burda iki tane argüman var x ve y olmak üzere. x üzeri y işlemini gerçekleştiriyor.
+def çarpma_yap(x,y): 
+    print("işleminizin_sonucu= "
+          +str(x**y) + 
+          " kadardır") 
+çarpma_yap(4, 2) #* işleminizin_sonucu= 16 kadardır .. bu çıkar.
+
+
+
+# başka bir örnek:
+def çarpma_yap(x,y): 
+    print("işleminizin_sonucu= "
+          +str(x**y) + 
+          " kadardır") 
+#çarpma_yap(5) # hata çıkar çünkü fonksiyon 2 argümana sahipken ben 1 argüman yazdım. işe böyle şeylerin önüne geçmek için ön tanımlı değerler kullanmalıyız. mesela burda hatayı engellemek için alt satırda ki şeyi yapmalıydık.
+def çarpma_yap(x,y=2): # böyle ön tanımlı değer kullandığım için artık tek bir argüman kullansam bile hata vermeyecektir.
+    print("işleminizin_sonucu= "
+          +str(x**y) + 
+          " kadardır") 
+çarpma_yap(5) # işleminizin_sonucu= 25 kadardır .. bu çıkar.
+çarpma_yap(5,3) #işleminizin_sonucu= 125 kadardır .. bu çıkar. parantezde ki bırıncı arguman ıken dıgerı ıkıncı oluyor ama asagıda ki satırda karışık yazabilirsin ama bir şartla onları belirtmen gerekli. gösterdim aşağıda.
+çarpma_yap(y=3,x=5) #işleminizin_sonucu= 125 kadardır .. burada mesala karışıkk yazdım ama belirtıgım ıcın hıc bır sorun olmadı.
+
+
+
+
+# def hesap_makinesi(x,y,z):
+#     print((x+y)/z)
+# hesap_makinesi(8,5,6)  
+# d=hesap_makinesi(8,5,6) 
+# print(d*4) #hata verir nedeni 312. satırda.
+# print(d) #none cıktı olarak cıkar. aşağıdaki satırda nedeni belirttim
+# #fonksiyondan elde edilen sonuç printe ya da başka bir şeye girdi olarak kullanılamaz. o sonuçla bir işlem yapılamaz.
+ #return:
+# işte bu sonucu kullanmak içi return kullnaılır.
+# return kendi olduğu hizaya kadar çalışır.
+
+def hesap_makinesi(x,y,z):
+    return (x+y)/z
+hesap_makinesi(8,4,6)  
+d=hesap_makinesi(8,4,6) 
+print(d*4) # 8.0 çıktı.
+print(int(d*4))  # 8 çıktı.float değil d int çıkmasını böyle sağladım.
+
+
+# def hesap_makinesi(x,y,z):
+#     return 
+#     (x+y)/z
+# frt=hesap_makinesi(8,4,6)  
+# print(frt)  # none .. bu çıkar. çünkü fonksiyon returna kadar işlem yapar. burda    (x+y)/z bunu returnun aşağısına yazdığım için return kadar gelip işlem bitti.
+# return dan sonra ıslem olmaz unutma.
+
+
+
+
+
+#local ve global değişkenler:
+# burda ilk iki satırda olan x ve y global değişkenler iken fonksiyonda ki x ve y ise local değişkenlerdir.
+x=10
+y=40
+def hesap_makinesi(x,y):
+    print(x*y)
+hesap_makinesi(5,8) # görüldüğü üzere local ve global değişkenler isimleri aynı olduğu halde birbirini etkilemedi. local ve globaller birbirini etkilemez.
+
+
+
+
+
+
+
+# localden globele eleman ekledık.
+b=[]
+a=input("listeye hangi elemanı eklemek istiyorsunzu")
+
+def okul_no(a):
+    b.append(a)
+    print(b)
+    
+okul_no(a) # her girdiğin değer local de olmayınca globale geçti ve ve her eklediğin değer listeye eklenmiş oldu.
+
+
+
+
+
+
+
+
+
+
+
+
+
+#EN GUZEL ORNEK:HEM İF HEM WHİLE HEM DEF HEMDE LİSTE HEPSİ VAR..
+liste=[]    
+
+def toplam(x): 
+    while x<1000:
+        x=x+5
+        if x<900:
+
+            liste.append(x)
+    print(liste)
+        
+        
+print(toplam(5))
+
