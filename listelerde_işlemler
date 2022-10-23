@@ -1,0 +1,29 @@
+users={
+"kahraman" : "1025493kjh"  
+"bayram" : "vzcxw78"      
+"ali" : "7jbbzds"      
+"merve" : "çşvkpoern6"      
+       }
+
+def control(kullanıcıadı,sıfre):
+    try:
+        if users[kullanıcıadı]==sıfre:
+            return True
+        else:
+            return False
+    except:
+            return False
+        
+print(map(control,))
+
+
+
+
+
+
+
+
+
+
+
+
