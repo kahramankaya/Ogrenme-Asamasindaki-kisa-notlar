@@ -1,0 +1,284 @@
+# a=[1,"k","kem",["fj"],["ksfjla","2312"],"5465"]
+
+# a[2]="kan"
+# print(a)
+# print(a[4][1])   #2312 ... bu cıkar. tum lıstedekı 4. ındexte kı listedekı 2. ındexı ıstedıgımız ıcın boyle yazdık.
+
+
+
+b=["jhdsk",789,"lsl"]
+b[2]="kaho"
+print(b)  # ['jhdsk', 789, 'kaho'] bu çıkar.
+
+
+
+c=["kahraman","ozcan","omer"]
+c[0]=c[1]=c[2]= "mıho"
+print(c)  # ['mıho', 'mıho', 'mıho'] ... bu cıkar.
+
+
+c[0:3]="12","78","39"
+print(c)   # ['12', '78', '39'] .. bu cıkar.
+c.append("21diyarbakır")
+print(c)  # ['12', '78', '39', '21diyarbakır'] ... bu cıkar.
+d=c+["huhuhuKALIMERO"]
+print(d)  # ['12', '78', '39', '21diyarbakır', 'huhuhuKALIMERO'] ... bu cıkar.
+del d[3]
+print(d)  # ['12', '78', '39', 'huhuhuKALIMERO'] bu cıkar.
+
+
+d.insert(0,"yuppi") # ınsert() ıstedıgın ındexe ıstedıgın seyı eklemyı saglar.
+print(d) # ['yuppi', '12', '78', '39', 'huhuhuKALIMERO']
+d.insert(2,"1233")
+print(d) # ['yuppi', '12', '1233', '78', '39', 'huhuhuKALIMERO'] ... bu cıkar.
+#sona eleman eklemeyı otomotık yapmak ıcın len()  fonksıyonundan yaraarlanalım.
+d.insert(len(d),"uhauha")
+print(d)  # ['yuppi', '12', '1233', '78', '39', 'huhuhuKALIMERO', 'uhauha'] .... bu çıkar.
+
+
+#baska ornek
+list=[m for m in range(1,101)] # bu şekilde bu listeye 1 den 100 e kadar sayıları kısaca yazdırdık. ve böyle bir listemiz oldu.
+# print(list) # 1 den 100 e kadar sayılar sayılar liste içinde osterılır.
+# print(*list) # 1 den 100 e kadar sayılar liste dışında ayrı ayrı yazıldı.
+print(*list,sep="+")
+
+
+
+
+#pop()  bu ıstedıgın ındexte kı elemanı sıler.
+e=[1,5,456,"hgj","alkd"]
+e.pop(3)
+print(e)  # [1, 5, 456, 'alkd'] .. bu çıkar.
+e.pop(1)
+print(e)  # [1, 456, 'alkd'] ... bu cıkar.
+
+
+
+#count() bıze lıstede o elemandan kac tane oldugunu soyler.
+f=[1,5,456,5,"hgj","hgj","alkd"]
+print(f.count("hgj"))  # 2 .. tane bu cıkar
+
+
+
+#extend()
+f.extend([3,"dj"])
+print(f)  # [1, 5, 456, 5, 'hgj', 'hgj', 'alkd', 3, 'dj'] ... bu cıkar.
+
+
+
+
+
+#index()
+f=[1,5,456,5,"hgj","hgj","alkd"]
+print(f.index("hgj"))  # 4 cıkar. yanı bıze bu yazdıgımoz elemanın ındexını verır.
+print(f.index(456))  # 2... bu cıkar
+
+
+
+#reverse()
+f=[1,5,456,5,"hgj","hgj","alkd"]
+f.reverse()
+print(f)
+
+
+
+
+
+
+
+#sort()
+g=[3,1233,1,23] #bunları karışık verdım.
+g.sort()
+print(g)  # [1, 3, 23, 1233] ... bu cıkar.
+
+
+
+
+
+
+#clear()
+k=[21,3283,"hklshd","dfhjklsd",23]
+k.clear()
+print(k)
+# eger gıdıp print(k.clear()) yaparsan cıktı almazsın. bu tum fonksıyonlar ıcın gecerlı bu ardaa. gıdıp prıntın ıcıne yazma.  once fonksıyonu uygula sonra tek basına degıskenı yaz.
+
+
+
+
+
+
+#tuple bunlar koselı parantezler(liste) gıbı degısme ozellıgı yoktur. ama indexleri vardır.
+t=(1,34,"kfj",["ad",123],2,"lk")
+print(t)  # (1, 34, 'kfj', ['ad', 123], 2, 'lk').... bu  çıkar.
+print(type(t))  # tuple ... bu cıkar.
+# dıyelım kı soyle bır sey yaparsan o zamna tuple degıl de str der. buna dıkkat et.
+ty=("skl")
+print(type(ty))  # türü tuple olduğu halde str çıktı. cunku burda tek bır eleman var. bunu engellemek için elemanın sonuna virgül koymalısın.
+ty=("skl",)
+print(type(ty))  # tuple  ... bu  çıkar.
+
+
+tr=(123,458,"kls","a","kla")
+print(tr[0])  # 123 .. bu çıkar.
+print(tr[3]) # a ... bu çıkar. tupleda da listeler gibi index bulunur yani.
+
+#tr[2]="mkmk"
+print(tr) # hata verir. çünkü biz demiştik ki tuple üzerinde değişilik yapamayız.
+
+
+
+
+# baska ornek:
+tu="kahraman_kaya"
+tuyk=tuple(tu)
+print(tuyk) # ('k', 'a', 'h', 'r', 'a', 'm', 'a', 'n', '_', 'k', 'a', 'y', 'a')
+
+
+
+
+
+
+
+
+
+
+
+
+#dictionary= sözlükler>>> değiştirilebilir ama elemanların indexi yoktur yani sırası yoktur.
+kl={"fare":"yedi",
+    "kedi":"kovaladı",
+    "bana":"ne kaldı"}
+print(kl)   # {'fare': 'yedi', 'kedi': 'kovaladı', 'bana': 'ne kaldı'} ... bu çıkar.
+print(len(kl))  # 3 çıktı DİKKAT burda 6 eleman yok. sadece 3 eleman var.
+
+m={"fare":117,
+    "kedi":[127,"kkq",879],
+    "bana":("ne kaldı",)}
+print(m)  # {'fare': 117, 'kedi': [127, 'kkq', 879], 'bana': 'ne kaldı'} .. bu çıkar.
+#print(m[2]) # hata verdi. çünkü yukarda demiştim ki sözlüklerin sırası yani indexi yoktur. 
+# ama istedğin indexe ulaşmak için birinci ismi yazarsan devamı da yazılır.
+#misal aşağıda:
+print("fare")# fare ... bu  çıkar.
+
+m={"fare":{"ghf",54,"67"},# burda da sozluk ıcın de sozluk yaptım cok guzel oluyor boyle.
+    "kedi":[127,"kkq",879],
+    "bana":("ne kaldı",)}
+print(m)  # {'fare': {'67', 'ghf', 54}, 'kedi': [127, 'kkq', 879], 'bana': ('ne kaldı',)}
+
+#sozluk için çok güzel bir örnek yaptım.
+m={"fare":{"a":"jhagd",
+           "b":657657,
+           "c":"865656"},
+   "sivo":[2,"jh"],
+   "shd":"jh"}
+print(m)
+print(m["fare"]["a"])  # jhagd ... bu çıkar. bu şekilde sözlük içinde sözlükte ki elemanı bulabilirsin.
+
+
+#sözlükte bir eleman ekleme ya da değiştirme:
+m={"fare":{"a":"jhagd",
+           "b":657657,
+           "c":"865656"},
+   "sivo":[2,"jh"],
+   "shd":"jh"}
+print(m)
+m["kaho"]="fty"
+print(m)  # 'kaho': 'fty' bu sona eklendi. sözlüğe en sona yeni bir eleman eklendi.
+m["fare"]["a"]="12345"
+print(m)  # böyle sozluk ıcınde kı sozluktekı elemanı değiştirdim.
+m[3]="QHŞHQWDG"
+print(m) # yine aynı şekilde eleman eklenmiş oldu en sona.
+
+#MÜKEMEL BİR ÖRNEK:
+kelıme_bılgısı=dict()
+key=input("kelıme=")
+value=input("anlam=")
+kelıme_bılgısı[key]=value
+
+print(kelıme_bılgısı)
+
+
+
+
+
+
+
+
+
+
+
+
+
+#setler = veri yapıları: index yok. her biri yalnız bir kez yazılır.
+et=["jh",21,"73","kaho"]
+print(set(et))  # {21, '73', 'jh', 'kaho'} .. bu çıkar.
+etk=("jh",21,"73","kaho")
+print(set(etk))  # {21, '73', 'jh', 'kaho'} ... bu çıkar.
+etkm="kahraman"
+print(set(etkm))  # {'a', 'n', 'r', 'm', 'h', 'k'} ... bu çıkar. burda tek bir str eleman olduğu için bu şekilde ayırdı.
+etkf=["hg","hg","83",1576,"a","a"]
+print(set(etkf))  # {'hg', '83', 1576, 'a'} .. bu çıkar. her eleman yalnızca bir kez yazdırır. iki kere olanları tek bir elemana çevirir.
+print(len(etkf))  # 6 çıktı.
+#wer=set(etkf)
+#print(wer[1]) # hata çıkar çünkü setlerde index yoktur demiştik.
+print(set(etkf[1])) # {'g', 'h'} .. bu çıkar.
+
+etkfl=["hg","hg","83",1576,"a","a"]
+k=set(etkfl)
+print(k) # {'hg', '83', 1576, 'a'} bu çıkar.
+k.add("157") 
+print(k) # {'hg', 1576, '157', '83', 'a'} burda bu eleman eklenmiş oldu.
+k.add("157")
+print(k) # görüldüğü üzere iki kere aynı ekleme işlemi yaptığım halde tek bir tane "157"yazdı. işte setlerin farkı.
+k.remove("hg")
+print(k) # {1576, '157', '83', 'a'} eleman silme işlemi remove fonksiyonu ile yapılır.
+#k.removo("hg") # aynı elemanı birinci kez removo ile silmiştim eğer yine o elemanı removo silmeye kalkışırsam hata verir. böyle bir hatanın olmaması için birincide removo kullanmıştık simdi ise k.discard() dedik böylece hata vermeden silmiş olduk.
+print(k)
+k.discard("hg")
+# print(k)
+# ctrl 1 tuşlarıyla sectıgın tum yeri yorum satırına alabilirsin.
+
+
+
+
+
+
+
+# difference: bir set te olanda diğerinde olmaanı gösteriyor. farlı elemanarı gösteriyor yani.
+set1=set([3,5,7,8])    
+set2=set([3,4,5,7])
+ş=set1.difference(set2)
+print(ş) # {8}.. bu çıkar.
+print(set1-set2) # {7}.. bu çıkar. dikkat 7 değil.
+
+# # intersection. her iki kümeden kesişime yarar.
+jkl=set1.intersection(set2)
+print(jkl) # {3, 5, 7} ... bu çıkar.
+print(set2.intersection(set1)) # {3, 5, 7} .. bu çıkar.
+p=set1 & set2
+print(p) #bu çıkar. bu & operatörü de kesişimi belirtmek için kullanılır.
+
+
+# union() birleşim demektir.
+wq=set1.union(set2)
+print(wq) # {3, 4, 5, 7, 8}.. bu çıkar.
+print(set1.symmetric_difference(set2))  # {4, 8}... bu çıkar. bu her iki kümede olmayanları ifade eder.
+
+# bu kesişimi ifade ediyor ama artık o kesişimi a nın yeni hali olmuş oluyor. artık a eski a değil de kesişim elemanlarına sahip a dır.
+set1.intersection_update(set2)
+print(set2)
+
+
+
+
+# setlerde sorgu işlemleri:isdisjoint(), issubset(), issuperset()
+set1.isdisjoint(set2)    
+print(set1.isdisjoint(set2)) # false.. bu çıkar. bunun anlamı her ki kümenin kesişimi boş mu diyor. false çıkması. demek ki boş değilmiş anlamına gelir. 
+print(set1.issubset(set2))   # true ... bu çıkar. set1 set2 nin alt kümesi mi ya da set2 set1 i kapsıyor mu anlamına gelir.
+print(set1.issuperset(set2)) # false çıktı. bunun anlamı set1 set2 yi kapsıyor mu anlamına gelir.
+
+
+
+
+    
+
