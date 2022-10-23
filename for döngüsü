@@ -1,0 +1,44 @@
+    
+ 
+#for döngüsü: uzun işlemlerde kısayol sağlar. her değeri tek tek yazmak yerine onu for döngüsüyle bir değişkene atayıp o değişkene çağırdığımızda hemen hepsi geliyor. ve tek tek yazmaya gerek kalmadı.
+wer=(1,32,76,"kjah","kjs","9283")
+for wer1 in wer:
+    print(wer1)  # tuple daki tüm elemanlar baştan sona sırasıyla yukardan aşağıya tek tek yzıldı.
+    
+    
+    
+wer3=(1,32,76,)
+for wer2 in wer3:
+    print(int(wer2/2)) # baştan sona tüm elemanları yukardan aşağıya float olmayacak şekilde yazıyor.
+  
+    
+  
+wer4=(1,32,76,)
+for wer6 in wer4:
+    m=wer6+4
+    print(int(m)) # baştan sona tüm elemanlara 4 ekledim kısa yoldan.
+
+
+maaslar=(100,200,300,600)
+def maas_hesapla(x):
+    print(x*120/100)
+for m in  maaslar:
+    maas_hesapla(m)
+
+#bu yukarda ki işlemi kısa yoldan bu aşağıda ki yollada yapabilirsin.
+maaslar=(100,200,300,600)
+for n in maaslar:
+    print(n*120/100)
+
+
+
+
+#işçinin maaşı 3000 tl den küçükse yüzde 20 zam alsın. değilse yüzde 10 zam alsın. 
+maaslar=[1000,2000,6000,9000]
+def maaslara_zaam(x):
+    if x>3000:
+        print(x*110/100)
+    else:
+        print(x*120/100)
+for m in maaslar:
+    maaslara_zaam(m)
