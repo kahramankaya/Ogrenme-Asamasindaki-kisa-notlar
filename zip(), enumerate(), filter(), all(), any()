@@ -1,0 +1,67 @@
+
+# zip() gömülü bir python sınıfıdır. diyelim ki iki listen var bu iki listeden her ikisinde ki aynı indexleri bir araya toplamaya sağlar.
+# ve aslında biz bun kendimiz öğrendiğimiz eski fonksiyonlardan da yapabiliriz ama o şekilde uzun sürdüğü için zip kullanmamız daha sağlıklı olur.
+# şimdi uzun yoldan bir örnek yapacağım daha sonra zip ile kısayoldan yapacağım.
+# 1.yol
+Sınıftakiler=["kahraman","bayram","merve","enes","ali"]
+SınavPuanları=[84,99,76,47,54]
+SınavListesi=[]
+for m in range(len(Sınıftakiler)):
+    SınavListesi.append((Sınıftakiler[m],SınavPuanları[m]))
+print(SınavListesi)
+
+# 2.yol ve kısa yol.
+print(list(zip(Sınıftakiler,SınavPuanları))) # output= [('kahraman', 84), ('bayram', 99), ('merve', 76), ('enes', 47), ('ali', 54)]
+#başka örnek:
+Sınıftakiler=["kahraman","bayram","merve","enes","ali"]
+SınavPuanları=[84,99,76,47,54]
+Yas=[21,22,27,18,19]
+print(list(zip(Sınıftakiler,SınavPuanları,Yas))) # output= [('kahraman', 84, 21), ('bayram', 99, 22), ('merve', 76, 27), ('enes', 47, 18), ('ali', 54, 19)]
+
+
+
+
+
+
+
+# enumerate() sınıfı
+# enumerate() yapmadan yaparsam
+def fx(sayi,Sınıftakiler):
+    Sınıftakiler=Sınıftakiler
+    liste=[]
+    sayi=sayi
+    for n in range(len(Sınıftakiler)):
+        liste.append((sayi,Sınıftakiler[sayi-4]))
+        sayi+=1
+    return liste
+print(fx(4,["kahraman","bayram","merve","enes","ali"]))
+
+# enumerate yaparak kullanarak kısa yol
+# eğer içerde parametreyi eklemezsek o zaman otomatik olarak 0 dan başlııyor. ama eğer biz bir sayı verirsek direk oradan başlıyor.
+print(list(enumerate(Sınıftakiler))) # output= [(0, 'kahraman'), (1, 'bayram'), (2, 'merve'), (3, 'enes'), (4, 'ali')]
+print(list(enumerate(Sınıftakiler,1))) # output= [(1, 'kahraman'), (2, 'bayram'), (3, 'merve'), (4, 'enes'), (5, 'ali')]
+print(list(enumerate(Sınıftakiler,5))) # output= [(5, 'kahraman'), (6, 'bayram'), (7, 'merve'), (8, 'enes'), (9, 'ali')]
+
+
+# filter()
+# filter sınıfı A Z arasında ve buyuk harf ıle baslayan kelımelerı alıyor sadece. diger kucuk harf veya başka bir şeyle başlayanı almaz.
+# bu sınıfı re modulunden cekiyoruz. bu yuzden ilk satıra import re yazıyoruz.
+import re
+def fy(yazı):
+    return re.search("^[A-Z].*",yazı)
+print(list(filter(fy,["jhgsdg","726jshd","54JHJ","--JD","KAHRAMAN","ALİ","enes"])))
+
+
+# all() ve any() fonksiyonları:
+# bu fonksıyonlar tum elemanlara bakar. eger hepsınden bırı false ıse false, eger hepsı true ıken true cıkarır. 
+# boylece iterabel objemızde false yaratan >>> bos strıng degeri,0,None degerlerinin oldugunu anlıyoruz.
+# all hepsınden sadece bır 0,"",None varsa False dondurur.
+# any hepsınden sadece bır 0,"",None varsa True dondurur.
+Sınıftakiler=["kahraman","bayram","merve","enes","ali",0]
+print(all(Sınıftakiler)) # output = False
+Sınıftakiler=["kahraman","bayram","merve","enes","ali",""]
+print(all(Sınıftakiler)) # output= False
+Sınıftakiler=["kahraman","bayram","merve","enes","ali",None]
+print(all(Sınıftakiler)) # output= False
+Sınıftakiler=["kahraman","bayram","merve","enes","ali"]
+print(all(Sınıftakiler)) # output= True
