@@ -1,0 +1,11 @@
+# gömülü fonksiyonlardan olan max(), min(), sum() olan kodları yazacağım.
+
+# max() bu fonksiyon verilen değerlerden en büyük olan değeri output a verir.
+kaho=[23,54,6.7,89,125]
+print(max(kaho)) # bu şekilde gösterildiği gibi aşağıda saturda gösterdiğim şekilde de kullanılabilir.
+print(max([23.9,544,6.7,789,125])) 
+# min() bu da min olan değeri verir.
+print(min([3,4,5,6,7,8,9.8]))
+# sum() iterable değerli değerleri toplar. ondalık ve int değerleri aynı anda toplayabilir.
+print(sum([1,2,67,4,54,456,456,35.8]))
+print(sum((1,2,67,4,54,456,456,35.8)))
