@@ -1,0 +1,27 @@
+import json
+siniftakiler={}
+siniftakiler["sinavdakiler"]=[]
+siniftakiler["sinavdakiler"].append({"sinavigecenler":{"kahraman":"ky","bayram":"snk","merve":"dmr"}})
+siniftakiler["sinavdakiler"].append({"sinavigecmeyenler":{"jsdf":"y","fd":"re","nm":"ertt"}})
+print(siniftakiler)
+
+# json yazdırma işlemleri.
+with open("veriler.json","w") as dosya: 
+    json.dump(siniftakiler, dosya) # bu fonksıyonla yukarıda kı satırda olusturdugumuz veriler.json dosyasınna dıctıonary verilerimi atamıs olduk. bu fonksıyon olmazsa sadce bos veriler.json dosyası olur.
+    
+
+
+# json okuma işlemleri
+with open("veriler.json","r") as gereksiz:
+    veriler=json.load(gereksiz)
+    print(siniftakiler["sinavdakiler"][0]) # output= {'sinavigecenler': {'kahraman': 'ky', 'bayram': 'snk', 'merve': 'dmr'}}
+    print(siniftakiler["sinavdakiler"][1]) # output= {'sinavigecmeyenler': {'jsdf': 'y', 'fd': 're', 'nm': 'ertt'}}
+
+
+
+
+
+
+
+
+
