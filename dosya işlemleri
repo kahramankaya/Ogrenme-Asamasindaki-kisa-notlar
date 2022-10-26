@@ -1,0 +1,18 @@
+
+#dosya işlemleri
+#txt dosyası  ve python dosyası aynı klasörde olmalıdır. yoksa file bulunamadı hatası alınır.
+#dosya okuma
+dosya=open("planlar.txt","r",encoding="utf-8") # encoding="utf-8" eger kodda ürkçe krakter var ise o zaman onları düzgün bir şekilde yazmaya yarar.
+
+# print(dosya.read(5))
+# print(dosya.read(8)) # ilk satırda 8. degere kadar okudu.
+# print(dosya.read(13))
+
+# print(dosya.tell())  # imlecın nerede olduğunu söyler. ama bunu öncesi  3. satırda yerini belirtmek gerekir.
+# print(dosya.seek(6)) #seek imlecı oraya ıstedıgın yere goturur. ve onun devamın alt satırda bulunan read sayesın de imlecın oldugu yerden kac karkter yazdırmak ıstersen onu da read e yazdırıyorsun boyle imlecın oldugu yerden ıtıbaren kac karakter ıstemıssen yazdırır.
+# print(dosya.read(8))
+
+dosya.close() # eğer actıgımız doyayı bu şekilde kapatmazsak sureklı dondurdugu ıcın bılgısayar yavaşlar.
+
+
+
