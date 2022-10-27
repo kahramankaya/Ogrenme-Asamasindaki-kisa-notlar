@@ -1,0 +1,23 @@
+# map: bilgisayar dilinde eşlemek anlamına gelir. ve iki parametre alır. ilk parametre fonksiyon ismi ikinci parametre ise iterable objesini alır.
+#..devamı: iterable elemanlarının her birini bu fonksiyonda dondurur. doger bır degısle o fonksıyonun ıslemının yaptırır.
+# farklı bir yoldan yapmaya çalışayım ilk başta ve daha sonra map kullanarak yapayım.
+
+# farklı bir yoldan:
+def fx(x):
+    kaho=[]
+    for m in x:
+        m=m**2
+        kaho.append(m)
+    return kaho
+print(fx([1,3,4,5,6,17]))
+
+
+# map kullanarak:
+def fx(x):
+    x=x**2
+    return x 
+print(list(map(fx,[1,3,4,5,6,17]))) # output= [1, 9, 16, 25, 36, 289]
+
+
+
+
